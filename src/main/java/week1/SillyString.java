@@ -7,10 +7,10 @@ public class SillyString extends TreeDecorator{
     }
 
     public String decorate() {
-        return super.decorate() + decorateWithBubbleLights();
+        return super.decorate() + decorateWithSillyString();
     }
 
-    private String decorateWithBubbleLights() {
+    private String decorateWithSillyString() {
         return " with Silly String";
     }
 }
