@@ -1,0 +1,17 @@
+The only concrete component here is the tree, and the rest serves as a decorator. The tree gets decorated correctly, because of the stack
+following the returned objects through the stack. The concrete component gets returned first, because it gets called last. This returns
+the tree component to the next decorator, which takes the tree and decorates it with it's own decorator, and returns the new
+tree object, with the added decorator. Because the entire object is returned, more decorations are possible because
+any other decorator takes the tree object as an argument. Since it's already been decorated once, a new decoration will be added
+and the updated tree object is returned again. Following this pattern, it's possible for a concrete component to have an infinite
+amount of decorations, due to how the abstract class is utilised to decorate the concrete component.
+
+
+ChristmasTree tree2 = new SillyString(new BubbleLights(new ChristmasTreeImpl()));
+        System.out.println(tree2.decorate());
+
+ Here, the tree2 object is created with the decorator called first, followed by another decorator, which then calls the concrete
+ component. Because the classes all implement the same decorate function, with each their own implementation. Because the
+ decorators inherit from the super class(the concrete component), they decorate on top of the concrete component originating
+ from the ChristmasTreeImpl, which extends the interface that decorates the object. Because they all utilise the same decorate
+ function, extended from the interface, this allows for infinite decorations.
