@@ -15,3 +15,6 @@ ChristmasTree tree2 = new SillyString(new BubbleLights(new ChristmasTreeImpl()))
  decorators inherit from the super class(the concrete component), they decorate on top of the concrete component originating
  from the ChristmasTreeImpl, which extends the interface that decorates the object. Because they all utilise the same decorate
  function, extended from the interface, this allows for infinite decorations.
+
+ The beauty here lies in the recursive working of the Decorator pattern. Because every decorator inehrits from the same Interface
+ /Abstract class, it can call the decorate function on the object it receives. This allows for recursive decorating, until it reaches the final decorator
