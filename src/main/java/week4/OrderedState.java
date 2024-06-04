@@ -11,7 +11,6 @@ public class OrderedState implements PackageState{
     @Override
     public void prev(Package pkg) {
         System.out.print("The package is in it's root state");
-
     }
 
     @Override
